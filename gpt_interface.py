@@ -9,6 +9,29 @@ def get_api_key():
 	openai.api_key = constants["openai_api_key"]
 	f.close()
 
+def make_prompt(elevator_pitch, extras):
+  prompt = "here is my elevator pitch:\n" + elevator_pitch
+  extras_titles = ["product or service description",
+                   "revenue model",
+                   "target market",
+                   "marketing channels",
+                   "competitive analysis",
+                   "pricing strategy",
+                   "sales strategy",
+                   "operational plan",
+                   "financial projections",
+                   "funding_needs",
+                   "risk_analysis",
+                   "exit_strategy"]
+  for title, input in zip(extras_titles, extras):
+    if input == "":
+      continue
+    prompt += '\n'
+    prompt += "my " + title + " is: " + input
+  prompt += '\n'
+  prompt += 'Can you help me with a good business plan?'
+  return prompt
+
 def call_gpt_4(prompt, model="gpt-4", verbose=False):  
 	get_api_key()
 	messages=[{"role": "user", "content": prompt}]    
@@ -28,6 +51,10 @@ def call_gpt_4(prompt, model="gpt-4", verbose=False):
 		print(response)
 		print("__________________________________________________________________")
 	return response
+
+def web_callable(elevator_pitch, extras):
+	prompt = make_prompt(elevator_pitch, extras)
+	response = call_gpt_4(prompt)
 
 
 prompt = "I want to create a business selling smart pools. Help me with a good business plan."

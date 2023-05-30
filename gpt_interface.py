@@ -55,6 +55,7 @@ def call_gpt_4(prompt, model="gpt-4", verbose=False):
 def web_callable(elevator_pitch, extras):
 	prompt = make_prompt(elevator_pitch, extras)
 	response = call_gpt_4(prompt)
+	return prompt, response
 
 
 prompt = "I want to create a business selling smart pools. Help me with a good business plan."

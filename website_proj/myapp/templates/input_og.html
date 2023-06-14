@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Business Plan Generator</title>
+  <link rel="stylesheet" type="text/css" href="styles.css">
+</head>
+<body>
+  
+
+  
+  <form form method="post" action="{% url 'text_input' %}">
+    {% csrf_token %}
+    <h1>Business Plan Generator</h1>
+    <h2>Elevator Pitch</h2>
+    <textarea id="elevator_pitch" name="elevator_pitch" placeholder="Required"></textarea>
+    <br>
+    <input type="submit" value="Submit">
+
+    <h2>Extra Info</h2>
+
+   <!--  "product or service description",
+   "revenue model",
+   "target market",
+   "marketing channels",
+   "competitive analysis",
+   "pricing strategy",
+   "sales strategy",
+   "operational plan",
+   "financial projections",
+   "funding_needs",
+   "risk_analysis",
+   "exit_strategy" -->
+
+    <label for="product_service_description">Product or Service Description:</label>
+    <br>
+    <textarea id="product_service_description" name="product_service_description" placeholder="Optional"></textarea>
+    <br>
+
+    <label for="revenue_model">Revenue Model:</label>
+    <br>
+    <textarea id="revenue_model" name="revenue_model" placeholder="Optional"></textarea>
+    <br>
+
+    <label for="target_market">Target Market:</label>
+    <br>
+    <textarea id="target_market" name="target_market" placeholder="Optional"></textarea>
+    <br>
+
+    <label for="marketing_channels">Marketing Channels:</label>
+    <br>
+    <textarea id="marketing_channels" name="marketing_channels" placeholder="Optional"></textarea>
+    <br>
+
+    <label for="competitive_analysis">Competitive Analysis:</label>
+    <br>
+    <textarea id="competitive_analysis" name="competitive_analysis" placeholder="Optional"></textarea>
+    <br>
+
+    <label for="pricing_strategy">Pricing Strategy:</label>
+    <br>
+    <textarea id="pricing_strategy" name="pricing_strategy" placeholder="Optional"></textarea>
+    <br>
+
+    <label for="sales_strategy">Sales Strategy:</label>
+    <br>
+    <textarea id="sales_strategy" name="sales_strategy" placeholder="Optional"></textarea>
+    <br>
+
+    <label for="operational_plan">Operational Plan:</label>
+    <br>
+    <textarea id="operational_plan" name="operational_plan" placeholder="Optional"></textarea>
+    <br>
+
+    <label for="financial_projections">Financial Projections:</label>
+    <br>
+    <textarea id="financial_projections" name="financial_projections" placeholder="Optional"></textarea>
+    <br>
+
+    <label for="funding_needs">Funding Needs:</label>
+    <br>
+    <textarea id="funding_needs" name="funding_needs" placeholder="Optional"></textarea>
+    <br>
+
+    <label for="risk_analysis">Risk Analysis:</label>
+    <br>
+    <textarea id="risk_analysis" name="risk_analysis" placeholder="Optional"></textarea>
+    <br>
+
+    <label for="exit_strategy">Exit Strategy:</label>
+    <br>
+    <textarea id="exit_strategy" name="exit_strategy" placeholder="Optional"></textarea>
+    <br>
+
+
+    <input type="submit" value="Submit">
+  </form>
+</body>
+</html>

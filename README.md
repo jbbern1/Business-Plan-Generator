@@ -11,6 +11,8 @@ cd Business-Plan-Generator
 python -m venv env\
 # Activate the virtual env (run this everytime you want to work on this project)
 env\Scripts\activate
+# In Linux
+source env\bin\activate
 ```
 Run the commands below to install the packages
 ```
